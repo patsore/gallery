@@ -1,0 +1,5 @@
+/target
+/static/images/*
+/static/thumbnails/*
+.env
+

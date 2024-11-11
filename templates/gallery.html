@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Image Gallery</h1>
+<div>
+    {% for image in images %}
+    <a href="#{{ image.original }}" class="card">
+        <img src="{{ image.thumbnail }}" alt="Thumbnail">
+    </a>
+    <div id="{{ image.original }}" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="{{ image.original }}" alt="Full-size Image">
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
