@@ -8,13 +8,21 @@
 <h1>Image Gallery</h1>
 <div>
     {% for image in images %}
+    {% if image.thumbnail == "/static/assets/folder.svg" %}
+    <a href="{{ image.original }}" class="card">
+        <img src="{{ image.thumbnail }}" alt="Folder">
+        <div class="card-title">{{ image.name }}</div>
+    </a>
+    {% else %}
     <a href="#{{ image.original }}" class="card">
         <img src="{{ image.thumbnail }}" alt="Thumbnail">
+        <div class="card-title">{{ image.name }}</div>
     </a>
     <div id="{{ image.original }}" class="lightbox">
         <a href="#" class="close">&times;</a>
         <img src="{{ image.original }}" alt="Full-size Image">
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 </body>

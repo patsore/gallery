@@ -19,6 +19,7 @@ div {
 }
 
 .card {
+    position: relative;
     width: 200px;
     height: 200px;
     display: flex;
@@ -29,6 +30,18 @@ div {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(0.5rem, 1.5vw, 1rem);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .card:hover {
